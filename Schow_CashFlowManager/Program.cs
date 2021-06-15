@@ -18,7 +18,7 @@ namespace Schow_CashFlowManager
             IPayable[] CashFlowArray = new IPayable[50];
             InitArray(ref CashFlowArray);
             int counter = 9;
-            bool cont = false;
+            bool cont = true;
             // Playing a little boot up sequence
             BootUp();
             // Starting the main do loop
@@ -45,9 +45,9 @@ namespace Schow_CashFlowManager
                 else if (response == 4)
                 {
                     WCFAnalysis(ref CashFlowArray, counter);
-                }
-                // Determining if the user would like to continue
-                cont = Proceed();
+                    // Determining if the user would like to continue
+                    cont = Proceed();
+                }             
             } while (cont == true);
         }
         static void BootUp()
@@ -101,10 +101,10 @@ namespace Schow_CashFlowManager
             // Gathering information for a new Invoice, and then creating it
             Console.Clear();
             Console.WriteLine("What is the name of this part?");
-            string pNum = Console.ReadLine();
+            string pName = Console.ReadLine();
             Console.Clear();
             Console.WriteLine("What is the part number? (4 digits)");
-            string pName = Console.ReadLine();
+            string pNum = Console.ReadLine();
             Console.Clear();
             Console.WriteLine("How many of this part are being ordered?");
             int quan = int.Parse(Console.ReadLine());
